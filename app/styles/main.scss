@@ -1,10 +1,41 @@
 // bower:scss
 // endbower
 
+$white: #FFFFFF;
+$green: rgb(1, 155, 129);
+
+
+@font-face {
+  font-family: 'Druk Web';
+  src: url('/font/Druk-Super-Web.eot');
+  src: url('/font/Druk-Super-Web.eot?#iefix') format('embedded-opentype'),
+  url('/font/Druk-Super-Web.woff') format('woff'),
+  url('/font/Druk-Super-Web.ttf') format('truetype'),
+  url('/font/Druk-Super-Web.svg#Druk Web') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.druk {
+  font-family: 'Druk Web';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+* {
+    transform-origin: 0px 0px 0px;
+}
+
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+}
+
+img {
+  width: 100%;
 }
 
 .hero-unit {
@@ -33,3 +64,321 @@ body {
 .fat {
   font-weight: bold;
 }
+
+/*nav*/
+.contain-to-grid .top-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contain-to-grid {
+  background: $white;
+}
+
+.top-bar {
+  background: $white;
+}
+
+.top-bar-section ul li > a {
+  color: $green;
+}
+
+.top-bar-section ul li:hover:not(.has-form) > a {
+  background: $white;
+  color: $green;
+  background-color: $white;
+}
+
+ .top-bar-section li:not(.has-form) a:not(.button) {
+  background: $white;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  background: transparent;
+  color: $green;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background: $white;
+  color: $green;
+  background-color: $white;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+  background: $white;
+  color: $green;
+}
+
+.top-bar-section ul li {
+    background: transparent;
+}
+
+/* menu effect */
+.lr {
+  display: inline-block;
+}
+.lr:after {
+  margin-top: -10px;
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+.lr:hover:after {
+  width: 100%;
+  background: $green;
+}
+
+/*logo*/
+.logo-wrapper {
+  position: relative;
+}
+
+.logo-wrapper .logo {
+  width: 100px;
+  height:  40px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 5px;
+  margin-left: -46px;
+  z-index: 2;
+}
+
+.tuk {
+  width: 50px;
+  height: 60px;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  margin-left: -50px;
+}
+
+.tuk-gif {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55px;
+  height: 55px;
+  background-image: url(../images/elements.svg);
+  background-position: 0 0;
+  background-size: 285px 50px;
+  background-repeat: no-repeat;
+  -moz-animation: giffy .90s infinite step-end, infinite ease-in-out;
+  -webkit-animation: giffy .90s infinite step-end, infinite ease-in-out;
+  animation: giffy .90s infinite step-end, infinite ease-in-out;
+}
+
+.tuktuk {
+  margin-top: 9px;
+}
+
+.tuk:hover .tuk-gif {
+    display: block;
+}
+
+.tuk:hover img:first-child {
+    display: none;
+}
+
+.giffy {
+  -moz-animation: giffy .44s infinite step-end;
+  -webkit-animation: giffy .44s infinite step-end;
+  animation: giffy .44s infinite step-end;
+}
+@-webkit-keyframes giffy {
+    0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -60px 0;
+}
+50% {
+    background-position: -120px 0;
+}
+75% {
+    background-position: -180px 0;
+}
+100% {
+    background-position: 0 0;
+}
+}
+
+@-moz-keyframes giffy {
+    0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -60px 0;
+}
+50% {
+    background-position: -120px 0;
+}
+75% {
+    background-position: -180px 0;
+}
+100% {
+    background-position: 0 0;
+}
+}       
+@-ms-keyframes giffy {
+    0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -60px 0;
+}
+50% {
+    background-position: -120px 0;
+}
+75% {
+    background-position: -180px 0;
+}
+100% {
+    background-position: 0 0;
+}
+}
+@keyframes giffy {
+    0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -60px 0;
+}
+50% {
+    background-position: -120px 0;
+}
+75% {
+    background-position: -180px 0;
+}
+100% {
+    background-position: 0 0;
+}
+}
+
+.centered {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.textIntro {
+  font-size: 65px;
+  line-height: 80px;
+  color: $green; 
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+/*slide*/
+.slides {
+    padding: 0;
+    width: 1000px;
+    height: 595px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 1000px;
+    height: 695px;
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
+}
+
