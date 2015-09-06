@@ -38,12 +38,29 @@ img {
   width: 100%;
 }
 
+button {
+    display: inline-block;
+    margin: 0;
+    padding: 15px 25px;
+    font-size: 12px;
+    line-height: 1.8;
+    vertical-align: bottom;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
 h1 {
  font-size: 65px;
   line-height: 80px;
   color: $green; 
   text-align: center;
-  text-decoration: underline;
   letter-spacing: 2px;   
 }
 
@@ -287,7 +304,7 @@ h1 {
 
 /*slide*/
 .slides {
-    margin: 150px 0px 0px 0px;
+    margin: 150px 0px 0px 0px; 
     padding: 0;
     width: 1000px;
     height: 595px;
@@ -405,5 +422,19 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     }
     to {
         opacity:1;
+    }
+}
+
+.border {
+    margin-top:20px;
+    button {
+    color: $green;
+    background: $white;
+    border: solid 3px $green;
+    }
+    button:hover, section.border button.hover {
+    border-color: $green;
+    color: $white;
+    background: $green;
     }
 }
