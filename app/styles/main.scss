@@ -24,10 +24,6 @@ $green: rgb(1, 155, 129);
   font-stretch: normal;
 }
 
-* {
-    transform-origin: 0px 0px 0px;
-}
-
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -174,116 +170,47 @@ h1 {
 }
 
 .tuk {
-  width: 50px;
-  height: 60px;
   position: absolute;
   display: block;
-  cursor: pointer;
-  margin-left: -50px;
+  // cursor: pointer;
+  // margin-left: -50px;
 }
 
 .tuk-gif {
-  display: none;
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 55px;
-  height: 55px;
-  background-image: url(../images/elements.svg);
+  width: 100px;
+  height: 60px;
+  background-image: url(../images/elements5.svg);
   background-position: 0 0;
-  background-size: 285px 50px;
   background-repeat: no-repeat;
-  -moz-animation: giffy .90s infinite step-end, infinite ease-in-out;
-  -webkit-animation: giffy .90s infinite step-end, infinite ease-in-out;
-  animation: giffy .90s infinite step-end, infinite ease-in-out;
+  transform: scale(0.7) translateY(-10px);
+  animation: 2s giffy infinite step-end;
+  animation-play-state: paused;
 }
 
-.tuktuk {
-  margin-top: 9px;
+.tuk-gif:hover  {
+  animation-play-state: running;
 }
 
-.tuk:hover .tuk-gif {
-    display: block;
-}
-
-.tuk:hover img:first-child {
-    display: none;
-}
-
-.giffy {
-  -moz-animation: giffy .44s infinite step-end;
-  -webkit-animation: giffy .44s infinite step-end;
-  animation: giffy .44s infinite step-end;
-}
-@-webkit-keyframes giffy {
-    0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -60px 0;
-}
-50% {
-    background-position: -120px 0;
-}
-75% {
-    background-position: -180px 0;
-}
-100% {
-    background-position: 0 0;
-}
-}
-
-@-moz-keyframes giffy {
-    0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -60px 0;
-}
-50% {
-    background-position: -120px 0;
-}
-75% {
-    background-position: -180px 0;
-}
-100% {
-    background-position: 0 0;
-}
-}       
-@-ms-keyframes giffy {
-    0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -60px 0;
-}
-50% {
-    background-position: -120px 0;
-}
-75% {
-    background-position: -180px 0;
-}
-100% {
-    background-position: 0 0;
-}
-}
 @keyframes giffy {
-    0% {
+  0% {
     background-position: 0 0;
+  }
+  25% {
+      background-position: -100px 0;
+  }
+  50% {
+      background-position: -200px 0;
+  }
+  75% {
+      background-position: -300px 0;
+  }
+  100% {
+      background-position: 0 0;
+  }
 }
-25% {
-    background-position: -60px 0;
-}
-50% {
-    background-position: -120px 0;
-}
-75% {
-    background-position: -180px 0;
-}
-100% {
-    background-position: 0 0;
-}
-}
+
 
 .centered {
   position: fixed;
@@ -437,4 +364,59 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     color: $white;
     background: $green;
     }
+}
+
+#experience {
+  background-color: $green;
+  padding: 50px 0px;
+  p{
+    color: $white;
+    font-size: 16px;
+    text-align: left;
+  }
+  h1 {
+    color: $white;
+    border-bottom: 5px solid $white;
+    display: inline-block;
+    margin: 15px 0px 5px 0px;
+  }
+}
+
+.contentIcon {
+  position: relative;
+  max-width: 100%;
+  display: block;
+}
+
+.nopadding {
+  padding: 0 !important;
+}
+
+.experienceDesc {
+  position:relative;
+  margin-top: 80px;
+}
+
+.experiencePhoto {
+  position:relative;
+  margin-top: 50px;
+}
+
+#map_canvas {
+  width: 1000px;
+  height: 500px;
+}
+
+#info-container {
+  height: 500px;
+  width: 500px;
+  left: 50%;
+  margin-top:-500px;
+  background: $white; 
+  display: none;
+  position: absolute;
+}   
+
+.showIcon {
+  background: url(images/pin-hover.svg);
 }

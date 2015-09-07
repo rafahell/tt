@@ -16,13 +16,16 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+      
 
+      <!-- nav -->
       <div class="contain-to-grid fixed">
           <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
           <section class="top-bar-section">
@@ -41,10 +44,7 @@
           </section>
             <ul class="title-area right">
               <li class="name">
-                <div class="tuk">
-                  <img src="images/tuktuk.svg" class="tuktuk">
                   <div class="tuk-gif"></div>
-                </div>
               </li>
             </ul>
             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
@@ -52,91 +52,119 @@
             </ul>
             </section>
           </nav>
-      </div>
+      </div> <!-- ./nav -->
  
-    <div class="container">
-        <div class="large-12 columns">
+      <div class="container">
           <img src="images/stripes.svg">
           <h1 class="textIntro centered druk"> FROM SMALL COSY PLACES<br/>TO WIDE OPEN SPACES</h1>
-         </div>
         <div class="large-12 columns">
-          <!-- <img src="http://placehold.it/1000x595" class="centered" style="position: fixed; top: 850px; left: 50%; width: 1000px; height: 595px;"/> -->
-            <ul class="slides centered">
+          <ul class="slides centered">
             <input type="radio" name="radio-btn" id="img-1" checked />
             <li class="slide-container">
+              <div class="slide">
+                <img src="http://lorempixel.com/1000/595/transport/1" />
+              </div>
+           </li>
+
+          <input type="radio" name="radio-btn" id="img-2" />
+          <li class="slide-container">
             <div class="slide">
-            <img src="http://lorempixel.com/1000/595/transport/1" />
-              </div>
-            </li>
+              <img src="http://lorempixel.com/1000/595/transport/2" />
+            </div>
+          </li>
 
-            <input type="radio" name="radio-btn" id="img-2" />
-            <li class="slide-container">
-              <div class="slide">
-                <img src="http://lorempixel.com/1000/595/transport/2" />
-              </div>
+          <input type="radio" name="radio-btn" id="img-3" />
+          <li class="slide-container">
+            <div class="slide">
+              <img src="http://lorempixel.com/1000/595/transport/3" />
+            </div>
+          </li>
 
-            </li>
+          <input type="radio" name="radio-btn" id="img-4" />
+          <li class="slide-container">
+            <div class="slide">
+              <img src="http://lorempixel.com/1000/595/transport/4" />
+            </div>
+          </li>
 
-            <input type="radio" name="radio-btn" id="img-3" />
-            <li class="slide-container">
-              <div class="slide">
-                <img src="http://lorempixel.com/1000/595/transport/3" />
-              </div>
-            </li>
+          <input type="radio" name="radio-btn" id="img-5" />
+          <li class="slide-container">
+            <div class="slide">
+              <img src="http://lorempixel.com/1000/595/transport/5" />
+            </div>
+          </li>
 
-            <input type="radio" name="radio-btn" id="img-4" />
-            <li class="slide-container">
-              <div class="slide">
-                <img src="http://lorempixel.com/1000/595/transport/4" />
-              </div>
+          <input type="radio" name="radio-btn" id="img-6" />
+          <li class="slide-container">
+            <div class="slide">
+              <img src="http://lorempixel.com/1000/595/transport/6" />
+            </div>
+          </li>
 
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-5" />
-            <li class="slide-container">
-              <div class="slide">
-                <img src="http://lorempixel.com/1000/595/transport/5" />
-              </div>
-
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-6" />
-            <li class="slide-container">
-              <div class="slide">
-                <img src="http://lorempixel.com/1000/595/transport/6" />
-              </div>
-
-            </li>
-
-            <li class="nav-dots">
+          <li class="nav-dots">
             <label for="img-1" class="nav-dot" id="img-dot-1"></label>
             <label for="img-2" class="nav-dot" id="img-dot-2"></label>
             <label for="img-3" class="nav-dot" id="img-dot-3"></label>
             <label for="img-4" class="nav-dot" id="img-dot-4"></label>
             <label for="img-5" class="nav-dot" id="img-dot-5"></label>
             <label for="img-6" class="nav-dot" id="img-dot-6"></label>
-            </li>
+          </li>
           </ul>
-        </div>
-            <div class="row">
-                <div class="large-12 columns text-center">
-                <div style="text-align: center; width: 70%; max-width: 100%; position: relative; margin-top: 60px;left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
-                    <h1 class="druk">WE PROVIDE BESPOKE EXPERIENCES
+        </div> <!-- ./columns -->
+          <div class="row">
+            <div class="large-12 columns text-center">
+              <div style="text-align: center; width: 70%; max-width: 100%; position: relative; margin-top: 60px;left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                  <h1 class="druk">WE PROVIDE BESPOKE EXPERIENCES
 OF DULBIN CITY THAT ARE PERSONAL,
 FUN AND TRULY UNIQUE</h1>
-                    <div class="border">
-                        <button>BOOK HERE</button>
-                    </div>
-                </div>
-                </div>
+                  <div class="border">
+                      <button>BOOK HERE</button>
+                  </div>
+              </div>
             </div>
+          </div>
         <!--div class="panel callout radius">   
         @@include('partials/_nav.html')
 
         @@include('partials/_content.html')
         </div-->
-      </div>
-    </div>
+
+      </div><!-- ./container -->
+
+      <section id="experience">
+        <div class="container text-center">
+          <div class="contentIcon">
+            <object type="image/svg+xml" data="images/experience-icon.svg" width="58" height="52"></object>
+          </div>
+          <h1 class="druk">TUK EXPERIENCE</h1>
+
+        <div class="row">
+          <div class="large-5 columns experienceDesc">
+          <p>A bespoke way to experience Dublin city<br/><br/>
+Winding through the small back streets from the old medieval city to the heart of modern, vibrant Dublin! You get to see the famous city landmarks but also experience real Dublin — the best restaurants, pubs, bars and shopping districts. It’s not only the most fun way to see Dublin but the easiest! We pick you up and drop you off in the city centre.</p>
+          </div>
+
+            <div class="large-6 columns nopadding experiencePhoto">
+            <img src="images/experience.jpg" width="545" height="365" />
+            </div>
+            <div id="map_canvas"></div>
+            <div id="info-container" ></div>
+
+        </div>    
+
+
+        </div> <!-- ./container -->
+      </section>
+
+
+
+
+
+
+
+
+
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -157,7 +185,6 @@ FUN AND TRULY UNIQUE</h1>
     <script src="/bower_components/foundation/js/foundation.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
