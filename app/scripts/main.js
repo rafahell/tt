@@ -17,7 +17,8 @@ function initialize() {
 	map = new google.maps.Map(document.getElementById('map_canvas'), {
 	zoom: 10,
 	center: new google.maps.LatLng(53.3428,-6.26742),
-	mapTypeId: google.maps.MapTypeId.ROADMAP
+	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	scrollwheel: false
 	});
 
 
@@ -54,7 +55,7 @@ function initialize() {
             this.setIcon("images/pin.svg");
         } else {
             $("#info-container").css("display", "block");
-                           this.setIcon("images/pin-hover.svg");
+           	this.setIcon("images/pin-hover.svg");
 
         }
 

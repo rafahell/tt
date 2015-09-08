@@ -25,7 +25,7 @@ $green: rgb(1, 155, 129);
 }
 
 body {
-  background: #fafafa;
+  background: #F6F6F3;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -129,6 +129,18 @@ h1 {
 .top-bar-section li.active:not(.has-form) a:not(.button):hover {
   background: $white;
   color: $green;
+}
+
+.top-bar .toggle-topbar.menu-icon a span::after {
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    margin-top: -8px;
+    top: 50%;
+    right: 0.9375rem;
+    box-shadow: 0 0 0 1px $green, 0 7px 0 1px $green, 0 14px 0 1px $green;
+    width: 16px;
 }
 
 .top-bar-section ul li {
@@ -354,18 +366,31 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
 .border {
     margin-top:20px;
+    outline: none;
     button {
-    color: $green;
-    background: $white;
-    border: solid 3px $green;
+      color: $green;
+      background: $white;
+      border: solid 3px $green;
     }
     button:hover, section.border button.hover {
-    border-color: $green;
-    color: $white;
-    background: $green;
+      border-color: $green;
+      color: $white;
+      background: $green;
+      font-weight: bold;
+    }
+    .green {
+      color: $white;
+      background: $green;
+      border: solid 3px $white;
+    }
+    .green:hover {
+      border-color: $white;
+      color: $green;
+      background: $white;
+      font-weight:bold;
     }
 }
-
+/*experience section*/
 #experience {
   background-color: $green;
   padding: 50px 0px;
@@ -403,20 +428,63 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 #map_canvas {
+  top: 70px;
   width: 1000px;
   height: 500px;
+  max-width: 100%;
 }
 
 #info-container {
   height: 500px;
   width: 500px;
   left: 50%;
-  margin-top:-500px;
+  margin-top:-430px;
   background: $white; 
   display: none;
   position: absolute;
 }   
 
-.showIcon {
-  background: url(images/pin-hover.svg);
+.thumbContainer {
+  width: 320px; 
+  margin-top: 150px;
+  height: 400px;
+  background: $white;
+  position: static;
+  padding: 200px 20px 0 20px;
+  & h5 {
+    color: $green !important;
+    margin-top: 0px;
+    margin-bottom: 25px; 
+  }
+  & p {
+    font-size: 16px;
+    color: $green !important;;
+  
+  }
+}
+
+.thumb {
+  background: transparent;
+  width: 320px;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 150px;
+}   
+
+/*booking*/
+#booking {
+  padding: 50px 0px;
+  p { 
+    color: $green;
+    font-size: 16px;
+    text-align: left;
+  }
+  h1 {
+    color: $green;
+    border-bottom: 5px solid $green;
+    display: inline-block;
+    margin: 15px 0px 5px 0px;
+  }
 }
