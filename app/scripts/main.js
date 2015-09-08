@@ -72,6 +72,20 @@ function initialize() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 
+$(function() {
+      $('#slides').slidesjs({
+	    width: 480,
+	    height: 300,
+        navigation: false,
+        pagination: false
+      });
+    });
 
-
+$(document).foundation({
+    accordion: {
+      callback : function (accordion) {
+        //console.log(accordion);
+      }
+    }
+  });
 
