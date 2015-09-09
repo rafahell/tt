@@ -18,7 +18,8 @@ function initialize() {
 	zoom: 10,
 	center: new google.maps.LatLng(53.3428,-6.26742),
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	scrollwheel: false
+	scrollwheel: false,
+	draggable: false
 	});
 
 
@@ -69,7 +70,7 @@ function initialize() {
 	
 } //initialize() 
 
-	google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
 
 
 $(function() {
