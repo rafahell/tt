@@ -77,8 +77,16 @@ $(function() {
       $('#slides').slidesjs({
 	    width: 480,
 	    height: 300,
+        navigation: true,
+        pagination: true
+      });
+        $('#slides2').slidesjs({
+	    width: 1000,
+	    height: 595,
         navigation: false,
-        pagination: false
+        play: {
+          auto: true
+        }
       });
     });
 
@@ -90,3 +98,6 @@ $(document).foundation({
     }
   });
 
+$(".menu-opener").click(function(){
+  $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
+});
