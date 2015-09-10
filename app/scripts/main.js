@@ -62,9 +62,6 @@ function initialize() {
 
 	});
 
-
-
-
 	}
 
 	
@@ -100,4 +97,24 @@ $(document).foundation({
 
 $(".menu-opener").click(function(){
   $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
+});
+
+/*smoth-scroll*/
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000,'swing');
+        return false;
+      }
+    }
+  });
+
+/*fade out*/
+$(".textIntro").fadeIn('slow').delay(3450).fadeOut('slow');
+$("#slides2").delay(4000).animate({ "marginTop": "150px" }, 1000);
 });
