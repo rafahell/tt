@@ -1,5 +1,6 @@
 /* jshint devel:true */
-console.log('\'Allo \'Allo!');
+
+//console.log('\'Allo \'Allo!');
 
 
 function initialize() {
@@ -57,9 +58,7 @@ function initialize() {
         } else {
             $("#info-container").css("display", "block");
            	this.setIcon("images/pin-hover.svg");
-
         }
-
 	});
 
 	}
@@ -82,7 +81,21 @@ $(function() {
 	    height: 595,
         navigation: false,
         play: {
-          auto: true
+              active: false,
+                // [boolean] Generate the play and stop buttons.
+                // You cannot use your own buttons. Sorry.
+              effect: "slide",
+                // [string] Can be either "slide" or "fade".
+              interval: 9000,
+                // [number] Time spent on each slide in milliseconds.
+              auto: true,
+                // [boolean] Start playing the slideshow on load.
+              swap: true,
+                // [boolean] show/hide stop and play buttons
+              pauseOnHover: false,
+                // [boolean] pause a playing slideshow on hover
+              restartDelay: 3500
+                // [number] restart delay on inactive slideshow
         }
       });
     });
@@ -90,15 +103,16 @@ $(function() {
 $(document).foundation({
     accordion: {
       callback : function (accordion) {
-        //console.log(accordion);
+        console.log(accordion);
       }
     }
-  });
+});
 
+/*responsive nav menu
 $(".menu-opener").click(function(){
   $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
 });
-
+*/
 /*smoth-scroll*/
 $(function() {
 $('a[href*=#]:not([href=#])').click(function() {
@@ -116,5 +130,5 @@ $('a[href*=#]:not([href=#])').click(function() {
 
 /*fade out*/
 $(".textIntro").fadeIn('slow').delay(3450).fadeOut('slow');
-$("#slides2").delay(4000).animate({ "marginTop": "150px" }, 1000);
+$("#slides2").delay(4000).animate({ "marginTop": "50px" }, 1000);
 });
