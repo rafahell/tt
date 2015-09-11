@@ -852,6 +852,17 @@ input[type="text"]:focus {
   }
 }
 
+.go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: #000;
+  background-color: rgba(100, 100, 100, 0.3);
+  font-size: 12px;
+  display: none;
+}
+
 @media (max-width: 1024px) { 
 
   #slides2 {

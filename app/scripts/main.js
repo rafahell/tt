@@ -68,15 +68,23 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+$(document).foundation({
+    accordion: {
+      callback : function (accordion) {
+        console.log(accordion);
+      }
+    }
+  });
 
-$(function() {
-      $('#slides').slidesjs({
+$(document).ready(function() {
+	"use strict";
+	$('#slides').slidesjs({
 	    width: 480,
 	    height: 300,
         navigation: true,
         pagination: true
-      });
-        $('#slides2').slidesjs({
+    });
+    $('#slides2').slidesjs({
 	    width: 1000,
 	    height: 595,
         navigation: false,
@@ -97,38 +105,44 @@ $(function() {
               restartDelay: 3500
                 // [number] restart delay on inactive slideshow
         }
-      });
+	});
+
+    /*responsive nav menu*/
+	$(".menu-opener").click(function(){
+  		$(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
+	});
+
+
+	/*fade out
+	$(".textIntro").fadeIn('slow').delay(3450).fadeOut('slow');
+	$("#slides2").delay(4000).animate({ "marginTop": "50px" }, 1000);*/
+		
+		
+	/*smoth-scroll*/
+    $('a[href^="#"]').on('click',function (e) {
+    e.preventDefault();
+    var target = this.hash,
+        $target = $(target);
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+        window.location.hash = target;
     });
+    });
+    
+	// Back to Top
+    // Show or hide the sticky footer button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 200) {
+			$('.go-top').fadeIn(200);
+		} else {
+			$('.go-top').fadeOut(200);
+		}
+	});
 
-$(document).foundation({
-    accordion: {
-      callback : function (accordion) {
-        console.log(accordion);
-      }
-    }
-});
-
-/*responsive nav menu
-$(".menu-opener").click(function(){
-  $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
-});
-*/
-/*smoth-scroll*/
-$(function() {
-$('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000,'swing');
-        return false;
-      }
-    }
-  });
-
-/*fade out*/
-$(".textIntro").fadeIn('slow').delay(3450).fadeOut('slow');
-$("#slides2").delay(4000).animate({ "marginTop": "50px" }, 1000);
+	// Animate the scroll to top
+	$('.go-top').click(function(event) {
+		event.preventDefault();
+		$('html, body').animate({scrollTop: 0}, 900);
+	});
 });
