@@ -3,7 +3,7 @@
 //console.log('\'Allo \'Allo!');
 
 
-function initialize() {
+function initialize() {		
 	var locations = [
 	  ['Dublin Castle', 53.3428, -6.26742,'images/pin.svg'],
 	  ['Trinity College', 53.3428, -6.16742, 'images/pin.svg'],
@@ -68,10 +68,12 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+
+
 $(document).foundation({
     accordion: {
       callback : function (accordion) {
-        console.log(accordion);
+        //console.log(accordion);
       }
     }
   });
@@ -119,7 +121,7 @@ $(document).ready(function() {
 		
 		
 	/*smoth-scroll*/
-    $('a[href^="#"]').on('click',function (e) {
+    $('a[href*=#]:not([href=#q1]):not([href=#q2]):not([href=#q3]):not([href=#q4]):not([href=#q5]):not([href=#q6]):not([href=#q7]):not([href=#q8])').on('click',function (e) {
     e.preventDefault();
     var target = this.hash,
         $target = $(target);
