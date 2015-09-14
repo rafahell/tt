@@ -25,20 +25,19 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
       
-      <div id="top"></div>
 	     <div class="contain-to-grid fixed">
           <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
           <section class="top-bar-section"> 
             <ul class="left">
-              <li><a class="lr" href="#">About</a></li>
-              <li><a class="lr" href="#experience">Experience</a></li>
-              <li><a class="lr" href="#booking">Book</a></li>
-              <li><a class="lr" href="#advertise">Advertise</a></li>
-              <li><a class="lr" href="#faq">FAQ</a></li>
+              <li><a class="lr smooth" href="#about">About</a></li>
+              <li><a class="lr smooth" href="#experience">Experience</a></li>
+              <li><a class="lr smooth" href="#booking">Book</a></li>
+              <li><a class="lr smooth" href="#tuk-ad">Advertise</a></li>
+              <li><a class="lr smooth" href="#faq">FAQ</a></li>
             </ul>
             <div class="logo-wrapper">
               <div class="logo">
-                <a href="#"><img src="images/logo.svg" width="100" height="16" /></a>
+                <a class="smooth" href="#about"><img src="images/logo.svg" width="100" height="16" /></a>
               </div>
             </div>
           </section>
@@ -58,27 +57,28 @@
       </nav>
       <nav class="menu hide-for-large-up">
         <ul class="menu-inner">
-          <a href="#" class="menu-link">
+          <a href="#about" class="menu-link smooth">
             <li>About</li>
           </a>
-          <a href="#experience" class="menu-link">
+          <a href="#experience" class="menu-link smooth">
             <li>Experience</li>
           </a>
-          <a href="#booking" class="menu-link">
+          <a href="#booking" class="menu-link smooth">
             <li>Book</li>
           </a>
-          <a href="#advertise" class="menu-link">
+          <a href="#tuk-ad" class="menu-link smooth">
             <li>Advertise</li>
           </a>
-          <a href="#faq" class="menu-link">
+          <a href="#faq" class="menu-link smooth">
             <li>FAQ</li>
           </a>
         </ul>
       </nav>
-          
+      <section id="about">      
           <div class="bgIntro">    
             <img src="images/stripes.svg">
           </div>
+          <div id="top"></div>
           <div class="row">
             <div class="centered">
             <h1 class="textIntro druk"> FROM SMALL COSY PLACES<br/>TO WIDE OPEN SPACES</h1>
@@ -95,14 +95,15 @@
               </div>
             </div> 
           </div><!-- ./row -->
-        <div class="row">
-          <div class="small-12 large-12 columns text-center textContainer">
-                <h1 class="druk">WE PROVIDE BESPOKE EXPERIENCES OF DULBIN CITY THAT ARE PERSONAL, FUN AND TRULY UNIQUE</h1>
-                <div class="border">
-                    <button>BOOK HERE</button>
-            </div>
+          <div class="row">
+              <div class="small-12 large-12 columns text-center textContainer">
+                    <h1 class="druk">WE PROVIDE BESPOKE EXPERIENCES OF DULBIN CITY THAT ARE PERSONAL, FUN AND TRULY UNIQUE</h1>
+                    <div class="border">
+                        <button>BOOK HERE</button>
+                </div>
+              </div>
           </div>
-        </div>
+      </section>      
       <!--div class="panel callout radius">   
       @@include('partials/_nav.html')
 
@@ -111,7 +112,7 @@
 
       </div><!-- ./container -->
 
-      <section id="experience" class="smooth">
+      <section id="experience">
         <div class="row text-center">
           <div class="contentIcon">
             <object type="image/svg+xml" data="images/experience-icon.svg" width="58" height="52"></object>
@@ -165,13 +166,13 @@ Winding through the small back streets from the old medieval city to the heart o
         </div>
 
         <div class="row">   
-          <div class="border text-center" style="margin-top:50px">
+          <div class="border text-center">
             <button class="green">CONTACT US</button>
           </div>
         </div>
       
     </section>
-    <section id="booking" class="smooth">
+    <section id="booking">
       <div class="container text-center">
         <div class="row">
           <div class="contentIcon">
@@ -181,26 +182,65 @@ Winding through the small back streets from the old medieval city to the heart o
         </div>
       </div><!-- ./container --> 
 
-      <div class="container">
         <div class="row">
-          <div class="small-12 large-5 columns desc">
+          <div class="small-12 large-4 columns desc">
             <p>The price of a 1 — hour tuk tour depends on the amount of people in each tuk. Each tuk tuk takes a maximum of six people.</p>
             <div class="border">
                 <button>BOOK HERE</button>
             </div>
           </div>
-          <div class="large-6 columns photo">
-            <img src="images/experience.jpg" width="545" height="365" />
+          <div class="small-12 large-7 columns table-price nopadding">
+            <table id="book">
+                <thead>
+                    <tr>
+                        <th><span>NUMBER OF PEOPLE</span></th>
+                        <th><span>PRICE PER PERSON</span></th>
+                        <th><span>TOTAL </span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6</td>
+                        <td>€16.70</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>€20</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>€25</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>€30</td>
+                        <td>€80</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>€40</td>
+                        <td>€80</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>€80</td>
+                        <td>€80</td>
+                    </tr>
+                </tbody>
+        </table>
+              <p>Book <a class="lr" href="#">here</a> or please contact us on <a class="lr" href="mailto:sales@tuktukdublin.ie">sales@tuktukdublin.ie</a> for more information</p>
           </div>
-        </div>
-      </div><!-- ./container --> 
+      </div><!-- ./row -->
     </section>
     
-    <section id="advertise" class="smooth">
+    <section id="tuk-ad">
       <div class="container text-center">
         <div class="row">
           <div class="contentIcon">
-            <object type="image/svg+xml" data="images/advertise.svg" width="67" height="52"></object>
+            <object type="image/svg+xml" data="images/camera.svg" width="67" height="52"></object>
           </div>
           <h1 class="druk">ADVERTISE</h1>
         </div>
@@ -218,8 +258,8 @@ Winding through the small back streets from the old medieval city to the heart o
                 <img src="images/experience.jpg" />
                 <img src="http://placehold.it/490x300" />
                 <img src="http://placehold.it/490x300" />
-                <a href="#" class="slidesjs-previous slidesjs-navigation" ><img class="prev-button" src="images/prev.svg" width="35" height="35"></a>
-                <a href="#" class="slidesjs-next slidesjs-navigation"><img class="next-button" src="images/next.svg" width="35" height="35"></a>
+                <a href="#" class="slidesjs-previous slidesjs-navigation" onclick="event.stopPropagation();"><img class="prev-button" src="images/prev.svg" width="35" height="35"></a>
+                <a href="#" class="slidesjs-next slidesjs-navigation" onclick="event.stopPropagation();"><img class="next-button" src="images/next.svg" width="35" height="35"></a>
           </div>
             </div>
         </div>
@@ -227,7 +267,7 @@ Winding through the small back streets from the old medieval city to the heart o
       <div class="row"></div>
     </section>
   
-    <section id="faq" class="smooth">
+    <section id="faq">
       <div class="container">
         <div class="row">
           <div class="small-12 large-5 columns desc">
@@ -236,7 +276,7 @@ Winding through the small back streets from the old medieval city to the heart o
           <div class="small-12 large-7 columns faq">
             <ul class="accordion" data-accordion>
               <li class="accordion-navigation">
-                <a href="#q1">How many people can go in a tuk tuk?</a>
+                <a class="open" href="#q1">How many people can go in a tuk tuk?</a>
                 <div id="q1" class="content">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </div>
@@ -320,7 +360,7 @@ Winding through the small back streets from the old medieval city to the heart o
         </div>
       </div>
       <div class="row">
-        <a href="#top" class="go-top" title="Go to the top of the page">Back to top of page</a> 
+        <a href="#top" class="go-top" title="Go to the top of the page"><img class="top-button" src="images/top.svg" width="35" height="35"></a> 
       </div>
     </section>
 

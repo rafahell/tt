@@ -121,16 +121,18 @@ $(document).ready(function() {
 		
 		
 	/*smoth-scroll*/
-    $('a[href*=#]:not([href=#q1]):not([href=#q2]):not([href=#q3]):not([href=#q4]):not([href=#q5]):not([href=#q6]):not([href=#q7]):not([href=#q8])').on('click',function (e) {
-    e.preventDefault();
-    var target = this.hash,
-        $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top
-    }, 900, 'swing', function () {
-        window.location.hash = target;
-    });
-    });
+    $(".smooth").click(function(event){
+         event.preventDefault();
+         //calculate destination place
+         var dest=0;
+         if($(this.hash).offset().top > $(document).height()-$(window).height()){
+              dest=$(document).height()-$(window).height();
+         }else{
+              dest=$(this.hash).offset().top;
+         }
+         //go to destination
+         $('html,body').animate({scrollTop:dest}, 1000,'swing');
+     });
     
 	// Back to Top
     // Show or hide the sticky footer button
@@ -145,6 +147,17 @@ $(document).ready(function() {
 	// Animate the scroll to top
 	$('.go-top').click(function(event) {
 		event.preventDefault();
-		$('html, body').animate({scrollTop: 0}, 900);
+		$('html, body').animate({scrollTop: -65}, 900);
 	});
+    
+    $(".accordion li").on("click", "a:eq(0)", function (event) {
+    var li_parent = $(this).parent();
+
+        if (li_parent.hasClass('active')) {
+            $(".accordion li div.content:visible").slideToggle("fast");
+        } else {
+            $(".accordion li div.content:visible").slideToggle("normal");
+            $(this).parent().find(".content").slideToggle("normal");
+        }
+    });
 });
