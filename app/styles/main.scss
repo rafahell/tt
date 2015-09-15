@@ -66,7 +66,7 @@ button {
 h1 {
   font-family: 'Karla', sans-serif;
   font-size: 65px;
-  line-height: 80px;
+  line-height: 60px;
   color: $green; 
   text-align: center;
   letter-spacing: 2px;   
@@ -129,6 +129,10 @@ p {
   color: $green;
 }
 
+.under {
+    border-bottom: 3px solid #029A80;
+}
+
 .top-bar-section ul li:hover:not(.has-form) > a {
   background: $white;
   color: $green;
@@ -138,7 +142,7 @@ p {
  .top-bar-section li:not(.has-form) a:not(.button) {
   background: $white;
   line-height: inherit;
-  padding: 11px 15px 0px 10px;
+  padding: 0;
 }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
@@ -171,6 +175,7 @@ p {
 
 .top-bar-section ul li {
     background: transparent;
+    padding: 11px 15px 0px 10px;
 }
 
 /* menu effect */
@@ -206,7 +211,7 @@ p {
     z-index: 0;
     background-repeat: no-repeat;
     max-width: 100%;
-    }
+}
 
 .menu-opener, .menu-opener:hover, .menu-opener.active, .menu-opener-inner, .menu-opener-inner::before, .menu-opener-inner::after, .menu, .menu.active {
   -webkit-transition: 250ms all;
@@ -401,18 +406,33 @@ p {
   width: 100%;
 }
 
-.textIntro {
-  width: 100%;
-  font-size: 65px;
-  line-height: 80px;
-  color: $green; 
-  text-align: center;
-  text-decoration: underline;
-  letter-spacing: 2px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.textFirstLine {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 5px solid #029A80;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, -50%);
+    width: 620px;
 }
+
+.textSecondLine {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 5px solid #029A80;
+    display: inline-block;
+    margin: 15px 0px 4px 0px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+}
+
 
 .textContainer {
   width: 90%; 
@@ -644,7 +664,7 @@ table#book tbody td {
 
 
 #slides2 {
-  margin-top: 400px;
+  margin-top: 140px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -734,6 +754,7 @@ table#book tbody td {
   }
   .desc {
       margin-top: 0px;
+      margin-bottom: 50px;
   }
   .faq {
       margin-top: 0px;
@@ -956,7 +977,7 @@ input[type="text"]:focus {
 @media (max-width: 1024px) { 
 
   #slides2 {
-    margin-top: 300px;
+   
   }
 
   .menu-opener {
@@ -969,6 +990,9 @@ input[type="text"]:focus {
 }
 
 @media (max-width: 768px) {
+  ul {
+    margin-left: 15px;
+  } 
   .contain-to-grid {
     display:none;
   }
@@ -1009,8 +1033,9 @@ input[type="text"]:focus {
   }
 
   #slides2 {
-    margin-top: 250px;
+    
   }
+
 }
 
 @media only screen and (max-device-width: 480px) { 
@@ -1040,7 +1065,7 @@ input[type="text"]:focus {
   }
     
   #slides2 {
-   margin-top: 90px;
+   
   }
 
   .nopadding {

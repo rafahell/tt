@@ -160,4 +160,11 @@ $(document).ready(function() {
             $(this).parent().find(".content").slideToggle("normal");
         }
     });
+    
+    //nav links
+    $('.top-bar a').click(function () {
+        $('.top-bar a').removeClass('under');
+        $(this).addClass('under');
+     });
+
 });
