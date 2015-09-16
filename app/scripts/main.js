@@ -76,10 +76,12 @@ $(document).foundation({
         //console.log(accordion);
       }
     }
-  });
+});
 
-$(document).ready(function() {
-	"use strict";
+$(".centered").fadeIn('slow').delay(3450);
+
+$( document ).ready(function() {
+    //slides
 	$('#slides').slidesjs({
 	    width: 480,
 	    height: 300,
@@ -91,23 +93,24 @@ $(document).ready(function() {
 	    height: 595,
         navigation: false,
         play: {
-              active: false,
-                // [boolean] Generate the play and stop buttons.
-                // You cannot use your own buttons. Sorry.
-              effect: "slide",
-                // [string] Can be either "slide" or "fade".
-              interval: 9000,
-                // [number] Time spent on each slide in milliseconds.
-              auto: true,
-                // [boolean] Start playing the slideshow on load.
-              swap: true,
-                // [boolean] show/hide stop and play buttons
-              pauseOnHover: false,
-                // [boolean] pause a playing slideshow on hover
-              restartDelay: 3500
-                // [number] restart delay on inactive slideshow
+          active: false,
+            // [boolean] Generate the play and stop buttons.
+            // You cannot use your own buttons. Sorry.
+          effect: "slide",
+            // [string] Can be either "slide" or "fade".
+          interval: 9000,
+            // [number] Time spent on each slide in milliseconds.
+          auto: true,
+            // [boolean] Start playing the slideshow on load.
+          swap: true,
+            // [boolean] show/hide stop and play buttons
+          pauseOnHover: false,
+            // [boolean] pause a playing slideshow on hover
+          restartDelay: 3500
+            // [number] restart delay on inactive slideshow
         }
 	});
+});
 
     /*responsive nav menu*/
 	$(".menu-opener").click(function(){
@@ -115,25 +118,18 @@ $(document).ready(function() {
 	});
 
 
-	/*fade out
-	$(".textIntro").fadeIn('slow').delay(3450).fadeOut('slow');
-	$("#slides2").delay(4000).animate({ "marginTop": "50px" }, 1000);*/
-		
-		
-	/*smoth-scroll*/
-    $(".smooth").click(function(event){
-         event.preventDefault();
-         //calculate destination place
-         var dest=0;
-         if($(this.hash).offset().top > $(document).height()-$(window).height()){
-              dest=$(document).height()-$(window).height();
-         }else{
-              dest=$(this.hash).offset().top;
-         }
-         //go to destination
-         $('html,body').animate({scrollTop:dest}, 1000,'swing');
-     });
-    
+    // when you click a menu item
+    $('nav a').on('click', function(e){
+      // stop the default behaviour  
+      e.preventDefault();
+      // fine the related section
+      var findSection = 'section' + $(this).context.hash;
+      // get it’s top position as a number
+      var currentSection = $(findSection).offset().top;
+      // scroll to that number
+      $("html, body").animate({ scrollTop: currentSection + 5 });
+    });
+
 	// Back to Top
     // Show or hide the sticky footer button
 	$(window).scroll(function() {
@@ -161,10 +157,55 @@ $(document).ready(function() {
         }
     });
     
-    //nav links
-    $('.top-bar a').click(function () {
-        $('.top-bar a').removeClass('under');
-        $(this).addClass('under');
-     });
+    $(window).on('scroll', function(e) {
+       
+       console.log('scrolling');
+       
+	   var navHeight = $( window ).height() - 0;
+       var height = $('#bgIntro').height();    
+			 if ($(window).scrollTop() > navHeight) {
+				 $('nav').addClass('fixed');
+                 //$('#bgIntro').remove();
+                 $(document).scrollTop($(document).scrollTop() - height);
+$('#bgIntro').remove();
+			 }
+			 else {
+				 $('nav').removeClass('fixed');
+			 }
+            if ($('#bgIntro').length == 0){
+                $('nav').addClass('fixed');
+                $('nav').css('margin-top', '0');
+            }
+        event.preventDefault();
+        
+    });
+    
+    // console log wrapper so you only have to type l() not console.log()
+    function l(m) {console.log(m);}
 
-});
+    // on scroll
+    $(window).on('scroll', function(e){
+  
+        // on scroll log how far scrolled
+        currentScroll = e.currentTarget.pageYOffset;
+        // for each section hightlight the relevant item in the navbar
+        $('section').each(function(){
+        // set the top position
+        topPos = $(this).offset().top
+        // set the bottom position
+        bottomPos = $(this).offset().top + $(this).height();
+        // check if the current scroll between the elements top and bottom position
+            if(currentScroll > topPos && currentScroll < bottomPos) {
+            // get the current elements id
+            var id = $(this)[0].id,
+            // make the menu selector with that id
+            menuItem = "a[href*='#" + id + "']";
+            // remove class from all items
+            $('nav li a').removeClass('active');
+            // apply the class to the current item
+            $(menuItem).addClass('active');
+            }
+        });   
+    });
+
+

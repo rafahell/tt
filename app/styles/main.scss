@@ -41,6 +41,31 @@ img {
   outline: none;
 }
 
+h1 {
+  font-family: 'Karla', sans-serif;
+  font-size: 65px;
+  line-height: 60px;
+  color: $green; 
+  text-align: center;
+  letter-spacing: 2px;   
+}
+
+h2, h3, h4, h5 {
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+}
+
+a {
+  color: $green;
+}
+
+a:hover, a:focus {
+    color: $green;
+}
+
 button {
   width: 150px;
   height: 70px;
@@ -63,23 +88,6 @@ button {
   border-radius: 0;
 }
 
-h1 {
-  font-family: 'Karla', sans-serif;
-  font-size: 65px;
-  line-height: 60px;
-  color: $green; 
-  text-align: center;
-  letter-spacing: 2px;   
-}
-
-h2, h3, h4, h5 {
-  font-family: 'Karla', sans-serif;
-}
-
-p {
-  font-family: 'Karla', sans-serif;
-}
-
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -98,7 +106,7 @@ p {
 
 .browserupgrade {
   margin: 0.2em 0;
-  background: #ccc;
+  background: $green;
   color: #000;
   padding: 0.2em 0;
 }
@@ -108,74 +116,41 @@ p {
 }
 
 /*nav*/
-.contain-to-grid .top-bar {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.contain-to-grid {
+nav {
+  width: 100%;
+  height: 75px;
+  margin-top: -75px;
+  position: relative;
+  left: 0px;
   background: $white;
+  z-index:999;
+    ul {
+    padding: 20px 0px 0px 10px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    }
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 10px;
+    a {
+    font-size: 14px;
+    color: $green;
+    text-decoration: none;
+    padding: 2px;
+    margin: 3px;
+    transition: all ease .3s;
+    }
+    a.active {
+    border-bottom: 3px solid $green;
+    }
+}
 }
 
-.top-bar {
-  font-family: 'Karla', sans-serif;
-  font-size: 14px;
-  background: $white;
-}
-
-.top-bar-section ul li > a {
-  font-family: 'Karla', sans-serif;
-  font-size: 14px;
-  color: $green;
-}
-
-.under {
-    border-bottom: 3px solid #029A80;
-}
-
-.top-bar-section ul li:hover:not(.has-form) > a {
-  background: $white;
-  color: $green;
-  background-color: $white;
-}
-
- .top-bar-section li:not(.has-form) a:not(.button) {
-  background: $white;
-  line-height: inherit;
-  padding: 0;
-}
-
-.top-bar-section li.active:not(.has-form) a:not(.button) {
-  background: transparent;
-  color: $green;
-}
-
-.top-bar-section li:not(.has-form) a:not(.button):hover {
-  background: $white;
-  color: $green;
-  background-color: $white;
-}
-
-.top-bar-section li.active:not(.has-form) a:not(.button):hover {
-  background: $white;
-  color: $green;
-}
-
-.top-bar .toggle-topbar.menu-icon a span::after {
-    content: "";
+.animation {
+    margin-top: 10px;
+    position: relative;
     display: block;
-    height: 0;
-    position: absolute;
-    margin-top: -8px;
-    top: 50%;
-    right: 0.9375rem;
-    box-shadow: 0 0 0 1px $green, 0 7px 0 1px $green, 0 14px 0 1px $green;
-    width: 16px;
-}
-
-.top-bar-section ul li {
-    background: transparent;
-    padding: 11px 15px 0px 10px;
 }
 
 /* menu effect */
@@ -221,16 +196,15 @@ p {
 
 .menu-opener {
   cursor: pointer;
-  height: 64px;
-  position: absolute;
-  top: 0%;
+  //position: absolute;
+  bottom: 0;
   left: 0%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  z-index:2;
+  z-index:99999;
   background: $white;
 }
 .menu-opener.active {
@@ -280,7 +254,7 @@ p {
   color: transparent;
   height: auto;
   position: absolute;
-  top: 64px;
+  margin-top: 30px;
   left: 0%;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -337,17 +311,14 @@ p {
 
 /*logo*/
 .logo-wrapper {
-  position: relative;
-}
-
-.logo-wrapper .logo {
-  width: 100px;
-  height:  40px;
-  position: absolute;
-  left: 45%;
-  right: 50%;
-  top: -2px;
-  z-index: 2;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    top: 20px;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
 
 .tuk {
@@ -400,10 +371,11 @@ p {
 
 .centered {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  display: none;
 }
 
 .textFirstLine {
@@ -415,7 +387,6 @@ p {
     display: inline-block;
     position: relative;
     left: 50%;
-    margin-top: 200px;
     transform: translate(-50%, -50%);
     width: 620px;
 }
@@ -483,7 +454,8 @@ p {
       color: $white;
       border-bottom: 5px solid $white;
       display: inline-block;
-      margin: 15px 0px 5px 0px;
+      margin: 15px 0px;
+      padding-bottom: 10px;
   }
   .desc {
       margin-top: 95px;
@@ -493,20 +465,22 @@ p {
   }
 }
 
-.bgIntro {
+#bgIntro {
+  margin: 0 auto;
   width: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  margin-top: 0px;
-  height: auto;
-  z-index: 0;
-  background-repeat: no-repeat;
+  height: 100%;
   max-width: 100%;
+  overflow: visible;
+  position: relative;
+  z-index: 0;
+  background-image: url(../images/stripes.svg);
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .contentIcon {
@@ -544,11 +518,12 @@ p {
   height: auto;
   background: $white;
   position: relative;
-  padding: 50px 10px 60px 10px;
+  padding: 50px 10px 50px 10px;
   & h5 {
         color: $green !important;
         margin-top: 0px;
         margin-bottom: 25px; 
+        font-size: 16px;
   }
   & p {
         font-size: 16px;
@@ -582,7 +557,8 @@ p {
       color: $green;
       border-bottom: 5px solid $green;
       display: inline-block;
-      margin: 15px 0px 5px 0px;
+      margin: 15px 0px;
+      padding-bottom: 10px;
   }
   .desc {
       margin-top: 50px;
@@ -639,7 +615,8 @@ table#book tbody td {
       color: $green;
       border-bottom: 5px solid $green;
       display: inline-block;
-      margin: 15px 0px 5px 0px;
+      margin: 15px 0px;
+      padding-bottom: 10px;
   }
   .desc {
       margin-top: 95px;
@@ -750,7 +727,8 @@ table#book tbody td {
       color: $white;
       border-bottom: 5px solid $white;
       display: inline-block;
-      margin: 0px;
+      margin: 15px 0px;
+      padding-bottom: 10px;
   }
   .desc {
       margin-top: 0px;
@@ -778,8 +756,7 @@ table#book tbody td {
   background: transparent;
   color: rgba(255, 255, 255, 0.65);
   font-family: inherit;
-  padding-left: 0;
-  padding: 0.7rem 0.5rem;
+  padding: 10px 0px 10px 0px;
 }
 
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
@@ -882,6 +859,7 @@ input[type="text"] {
   outline: none;
   background: $white;
   color: $green;
+  font-size: 16px;
 }
 
 input[type="submit"] {
@@ -1010,21 +988,11 @@ input[type="text"]:focus {
     font-size: 1.2em;
   }
 
-  .centered {
-    top:22%;
-  }
-
   .textContainer {
     margin-top: 250px;
   }
 
-  .top-bar {
-    height: 2.8125rem;
-    line-height: 2.8125rem;
-    overflow: hidden;
-    position: relative;
-  }
-  .tuk-gif {
+  .tuk-gif, .top-navigation {
     display: none;
   }
 
@@ -1049,10 +1017,6 @@ input[type="text"]:focus {
     font-size: 25px;
     line-height: 30px;
     letter-spacing: 1px;  
-  }
-
-  .centered {
-    top:25%;
   }
 
   .textContainer {
