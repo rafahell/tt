@@ -167,7 +167,7 @@ $( document ).ready(function() {
 				 $('nav').addClass('fixed');
                  //$('#bgIntro').remove();
                  $(document).scrollTop($(document).scrollTop() - height);
-$('#bgIntro').remove();
+                 $('#bgIntro').remove();
 			 }
 			 else {
 				 $('nav').removeClass('fixed');
