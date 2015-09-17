@@ -6,21 +6,21 @@
 function initialize() {		
 	var locations = [
 	  ['Dublin Castle', 53.3428, -6.26742,'images/pin.svg'],
-	  ['Trinity College', 53.3428, -6.16742, 'images/pin.svg'],
-	  ['Dame Street', 53.3428, -6.36742, 'images/pin.svg'],
-	  ['Guinness Storehouse', 53.3428, -6.46742, 'images/pin.svg'],
-	  ['St. Patricks Church', 53.3428, -6.56742, 'images/pin.svg']
+	  ['Trinity College', 53.344016, -6.254461, 'images/pin.svg'],
+	  ['Dame Street', 53.344798, -6.264685, 'images/pin.svg'],
+	  ['Guinness Storehouse', 53.341648, -6.286024, 'images/pin.svg'],
+	  ['St. Patricks Church', 53.342878, -6.270620, 'images/pin.svg']
 	];
 	var map;
 	var markers = [];
-
-
+    
+    
 	map = new google.maps.Map(document.getElementById('map_canvas'), {
-	zoom: 10,
+	zoom: 14,
 	center: new google.maps.LatLng(53.3428,-6.26742),
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	scrollwheel: false,
-	draggable: false
+	draggable: true
 	});
 
 
@@ -43,7 +43,7 @@ function initialize() {
 
 	for (var i = 0; i < markers.length; i++) {
 	var marker = markers[i];	
-	google.maps.event.addListener(marker, 'click', function () {
+	google.maps.event.addListener(marker, 'click', function (e) {
 		
 
 	//infowindow.setContent(this.html);
@@ -51,12 +51,12 @@ function initialize() {
 	 
 	document.getElementById('info-container').innerHTML = this.html;
 
-
-	if ($("#info-container").css("display") == "block") {
+        
+	if ($("#info-container").css("display") === "block") {
             $("#info-container").css("display", "none");
             this.setIcon("images/pin.svg");
         } else {
-            $("#info-container").css("display", "block");
+            $("#info-container").animate({width:'toggle'},350);
            	this.setIcon("images/pin-hover.svg");
         }
 	});
@@ -71,11 +71,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 $(document).foundation({
-    accordion: {
-      callback : function (accordion) {
-        //console.log(accordion);
-      }
-    }
+     accordion: {
+    // specify the class used for accordion panels
+    content_class: 'content',
+    // specify the class used for active (or open) accordion panels
+    active_class: 'active',
+    // allow multiple accordion panels to be active at the same time
+    multi_expand: false,
+    // allow accordion panels to be closed by clicking on their headers
+    // setting to false only closes accordion panels when another is opened
+    toggleable: true
+  }
 });
 
 $(".centered").fadeIn('slow').delay(3450);
@@ -146,17 +152,18 @@ $( document ).ready(function() {
 		$('html, body').animate({scrollTop: -65}, 900);
 	});
     
-    $(".accordion li").on("click", "a:eq(0)", function (event) {
+    /*$(".accordion li").on("click", "a:eq(0)", function (event) {
     var li_parent = $(this).parent();
 
         if (li_parent.hasClass('active')) {
-            $(".accordion li div.content:visible").slideToggle("fast");
+            $(".accordion li div.content:visible").slideUp("normal");
         } else {
-            $(".accordion li div.content:visible").slideToggle("normal");
+            $(".accordion li div.content:visible").slideUp("normal");
             $(this).parent().find(".content").slideToggle("normal");
         }
-    });
-    
+    });*/
+
+
     $(window).on('scroll', function(e) {
        
        console.log('scrolling');

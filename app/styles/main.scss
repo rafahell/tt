@@ -406,7 +406,6 @@ nav {
     width: 520px;
 }
 
-
 .textContainer {
   width: 90%; 
   max-width: 100%; 
@@ -508,11 +507,12 @@ nav {
 #info-container {
   height: 500px;
   width: 500px;
-  left: 50%;
-  margin-top:-430px;
+  right: 14px;
+  margin-top: -405px;
   background: $white; 
   display: none;
   position: absolute;
+  color: $green;
 }   
 
 .thumbContainer {
@@ -744,28 +744,50 @@ table#book tbody td {
 /*accordions*/
 .accordion:last-child .accordion-navigation:last-child, .accordion dd:last-child {
   border-bottom: 3px solid rgba(255, 255, 255, 0.65);
+    margin-bottom: -3px;
+    margin-top: 0px;
+    
+}
+
+.accordion:first-child .accordion-navigation:first-child, .accordion dd:last-child {
+  border-top: none;
+    border-bottom: none;
+    
+}
+
+.accordion:first-child:hover .accordion-navigation:first-child:hover, .accordion dd:last-child:hover {
+  border-top: 0px solid #FFFFFF;
 }
 
 .accordion .accordion-navigation, .accordion dd {
-  border-top: 3px solid rgba(255, 255, 255, 0.65);
+    /*border-top: 3px solid rgba(255, 255, 255, 0.65);*/
+//    border-bottom: 0px solid rgba(255, 255, 255, 0.65);
 }
 
-.accordion .accordion-navigation, .accordion dd {
-  border-top: 3px solid rgba(255, 255, 255, 0.65);
+.accordion:hover .accordion-navigation:hover, .accordion dd:hover {
+    /*border-top: 3px solid rgba(255, 255, 255, 0.65);
+    border-bottom: 3px solid #FFFFFF;*/
 }
+
 
 .accordion .accordion-navigation > a, .accordion dd > a {
   background: transparent;
   color: rgba(255, 255, 255, 0.65);
   font-family: inherit;
   padding: 10px 0px 10px 0px;
+//    margin-top: -3px;
+//        margin-bottom: 0px;
+}
+
+.close{
+    border-top: 3px solid rgba(255, 255, 255, 0.65);
 }
 
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
   background: transparent;
   color: $white;
   border-top: 3px solid $white;
-  margin-top: -3px;
+//  margin-top: -3px;
   border-bottom: 3px solid $white;
   margin-bottom: -3px;
 }
@@ -774,36 +796,29 @@ table#book tbody td {
   background: transparent;
   color: $white;
   margin-bottom: -3px;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid $white;
+    padding-left: 0;
 }
 
 .accordion .accordion-navigation.active > a, .accordion dd.active > a {
   background: transparent;
   border-bottom: none;
   color: $white;
-  border-top: 3px solid white;
-  margin-top: -3px;
+  border-top: 3px solid $white;
+//  margin-top: -3px;
   margin-bottom: -3px;
+    border-top: 3px solid $white;
 }
 
 .accordion dd > a{ 
    transition: all 0.5s;
 }
 
-.accordion-navigation {
- /* >a:hover:before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid $white;
-  top: 8px;
-  position: relative;
-  float: right;
-  z-index:8;
-  }*/
-  >a:after {
+.accordion-navigation >a:hover:after{
+  border-top: 10px solid $white !important;
+}
+
+.accordion-navigation > a:after {
   content: '';
   width: 0;
   height: 0;
@@ -814,20 +829,15 @@ table#book tbody td {
   position: relative;
   float: right;
   z-index:8;
-  }
-  &.active a:after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+}
+
+.accordion-navigation.active a:after {
   border-top: 10px solid $white;
  -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-  }
 }
 
 /*newsletter*/
