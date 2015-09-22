@@ -28,6 +28,8 @@ $yellow: #FCE700;
 * {
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -134,15 +136,15 @@ nav {
       display: inline-block;
       margin-right: 10px;
     a {
-    font-size: 14px;
-    color: $green;
-    text-decoration: none;
-    padding: 2px;
-    margin: 3px;
-    transition: all ease .3s;
+        font-size: 14px;
+        color: $green;
+        text-decoration: none;
+        padding: 2px;
+        margin: 3px;
+        transition: all ease .3s;
     }
     a.active {
-    border-bottom: 3px solid $green;
+      border-bottom: 3px solid $green;
     }
 }
 }
@@ -156,8 +158,9 @@ nav {
 /* menu effect */
 .lr {
   display: inline-block;
+  border-bottom: 3px solid $green;
 }
-.lr:after {
+/*.lr:after {
   margin-top: 0px;
   content: '';
   display: block;
@@ -169,7 +172,7 @@ nav {
 .lr:hover:after {
   width: 100%;
   background: $green;
-}
+}*/
 
 /*menu responsive*/
 .logo-responsive {
@@ -177,7 +180,7 @@ nav {
     height: 16px;
     overflow: visible;
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -215,8 +218,10 @@ nav {
   background: $green;
   height: .5rem;
   margin-left: .75rem;
-  margin-top: 1.75rem;
+  margin-top: 2.2rem;
   width: 2.5rem;
+  position: relative;
+  display: inline-block;    
 }
 .menu-opener-inner::before, .menu-opener-inner::after {
   background: $green;
@@ -254,19 +259,20 @@ nav {
   color: transparent;
   height: auto;
   position: absolute;
-  margin-top: 30px;
+  margin-top: 70px;
   left: 0%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   width: 0rem;
-  z-index: 1;
+  z-index: -1;
 }
 .menu.active {
-  /*width: -webkit-calc(100% - 2rem);
-  width: calc(100% - 2rem);*/
     width: 100%; 
+    margin-top: 65px;
+    position: fixed;
+    z-index: 99999;
 }
 .menu.active .menu-link {
   color: white;
@@ -335,13 +341,14 @@ nav {
   position: absolute;
   width: 100px;
   height: 60px;
-  background-image: url(../images/elements5.svg);
+  background-image: url(../images/elements7.svg);
   background-position: 0 0;
   background-repeat: no-repeat;
   transform: scale(0.7) translateY(-10px);
   animation: 2s giffy infinite step-end;
   animation-play-state: paused;
   margin-left: -100px; 
+  z-index: 999999;    
 }
 
 .tuk-gif:hover  {
@@ -410,7 +417,6 @@ nav {
   width: 90%; 
   max-width: 100%; 
   position: relative; 
-  margin-top: 250px;
   left: 50%; 
   -webkit-transform: translate(-50%, -50%); 
   transform: translate(-50%, -50%);
@@ -463,6 +469,7 @@ nav {
   }
   .photo {
       margin-top: 95px;
+      margin-bottom: 95px;
   }
 }
 
@@ -496,23 +503,55 @@ nav {
 }
 
 #map_canvas {
-  top: 95px;
-  /*width: 100%;*/
+  margin-top: 0;
+  margin-bottom: 60px;
+  width: 100%;
   height: 500px;
   max-width: 100%;
-  margin-left: 15px;
-  width: 97%;
 }
 
 #info-container {
-  height: 500px;
-  width: 500px;
-  right: 14px;
-  margin-top: -405px;
-  background: $white; 
-  display: none;
-  position: absolute;
-  color: $green;
+    height: 500px;
+    width: 510px;
+    right: 15px;
+    top: 0;
+    display: none;
+    background: #FFFFFF;
+    position: absolute;
+    color: $green;
+    padding: 30px;
+    p{
+      color: $green;  
+    }
+    a{
+      display: inline-block;
+      border-bottom: 3px solid $green;
+    }
+    .image {
+      width: 320px;
+      height: 200px;
+      max-width: 100%;
+    }
+    .button-close{
+      background-image: url(../images/close.svg);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      float: right;
+      overflow: hidden;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+    .buttons-container{
+      width: 100%;
+      margin-top: 35px;
+      position: relative;
+      display: block;
+    }
+    .next-button, .prev-button {
+      width: 35px;
+      height: 35px;
+  }
 }   
 
 .thumbContainer {
@@ -534,7 +573,7 @@ nav {
 }
 
 .thumb {
-  margin-top: 195px;
+  margin:0 auto;
   background: transparent;
   width: 100%;
   height: 150px;
@@ -644,6 +683,7 @@ table#book tbody td {
 
 #slides2 {
   margin-top: 140px;
+  margin-bottom: 250px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -744,43 +784,29 @@ table#book tbody td {
 /*accordions*/
 .accordion:last-child .accordion-navigation:last-child, .accordion dd:last-child {
   border-bottom: 3px solid rgba(255, 255, 255, 0.65);
-    margin-bottom: -3px;
-    margin-top: 0px;
+  margin-bottom: -3px;
+  margin-top: 0px;
     
 }
 
 .accordion:first-child .accordion-navigation:first-child, .accordion dd:last-child {
   border-top: none;
-    border-bottom: none;
-    
+  border-bottom: none;   
 }
 
 .accordion:first-child:hover .accordion-navigation:first-child:hover, .accordion dd:last-child:hover {
   border-top: 0px solid #FFFFFF;
 }
 
-.accordion .accordion-navigation, .accordion dd {
-    /*border-top: 3px solid rgba(255, 255, 255, 0.65);*/
-//    border-bottom: 0px solid rgba(255, 255, 255, 0.65);
-}
-
-.accordion:hover .accordion-navigation:hover, .accordion dd:hover {
-    /*border-top: 3px solid rgba(255, 255, 255, 0.65);
-    border-bottom: 3px solid #FFFFFF;*/
-}
-
-
 .accordion .accordion-navigation > a, .accordion dd > a {
   background: transparent;
   color: rgba(255, 255, 255, 0.65);
   font-family: inherit;
   padding: 10px 0px 10px 0px;
-//    margin-top: -3px;
-//        margin-bottom: 0px;
 }
 
 .close{
-    border-top: 3px solid rgba(255, 255, 255, 0.65);
+  border-top: 3px solid rgba(255, 255, 255, 0.65);
 }
 
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
@@ -811,7 +837,17 @@ table#book tbody td {
 }
 
 .accordion dd > a{ 
-   transition: all 0.5s;
+  transition: all 0.5s;
+  color: $white;    
+}
+
+.acc-link{ 
+  color: $white;
+  display: inline-block;
+  border-bottom: 3px solid $white;
+    &:hover {
+      color: $white;  
+    }
 }
 
 .accordion-navigation >a:hover:after{
@@ -888,11 +924,11 @@ input[type="submit"] {
  color: $green;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder { 
  color: $green;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder { 
  color: $green;  
 }
 
@@ -932,19 +968,7 @@ input[type="text"]:focus {
   }
   .lr {
   display: inline-block;
-  }
-  .lr:after {
-    margin-top: 0px;
-    content: '';
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-  }
-  .lr:hover:after {
-    width: 100%;
-    background: $green;
+  border-bottom: 3px solid $green;
   }
 }
 
@@ -965,32 +989,47 @@ input[type="text"]:focus {
 }
 
 @media (max-width: 1024px) { 
-
-  #slides2 {
-   
-  }
+  .top-navigation{
+    margin-top: 75px;
+    position: fixed;  
+  }      
 
   .menu-opener {
     visibility: hidden;
   }
+    
+//  #bgIntro {
+//    display:none;  
+//  }
 
   .menu.active {
     width: 100%;
-  }
+  } 
 }
 
 @media (max-width: 768px) {
   ul {
     margin-left: 15px;
-  } 
+  }
+  #bgIntro {
+   background-attachment: scroll !important;
+  }
   .contain-to-grid {
     display:none;
   }
-
+  
+  .tuk-gif{
+    margin-top: 5px;
+  }
+    
   .menu-opener {
     visibility: visible;
+    top: 70px;
+    position: fixed;
   }
-  
+  .menu.active{
+    margin-top: 70px;
+  }
   .menu-inner {
     display: block;
   }
@@ -999,12 +1038,8 @@ input[type="text"]:focus {
     padding: 10px 0;
     font-size: 1.2em;
   }
-
-  .textContainer {
-    margin-top: 250px;
-  }
-
-  .tuk-gif, .top-navigation {
+    
+  .top-navigation {
     display: none;
   }
 
@@ -1012,8 +1047,9 @@ input[type="text"]:focus {
     padding-left: 0;
   }
 
-  #slides2 {
-    
+  #booking .table-price {
+    padding-left:0.9375rem;
+    padding-right:0.9375rem;
   }
 
 }
@@ -1022,26 +1058,40 @@ input[type="text"]:focus {
   h1 {
     font-size: 25px;
     line-height: 30px;
-    letter-spacing: 1px; 
+    letter-spacing: 0px; 
   }
-
-  .textIntro {
-    font-size: 25px;
-    line-height: 30px;
-    letter-spacing: 1px;  
+    
+  .tuk-gif {
+    display:none;  
   }
-
-  .textContainer {
-    margin-top: 130px;
+    
+  .textFirstLine {
+    width: 270px;
   }
-
-  #map_canvas {
-    margin-left: 15px;
-    width: 90%;
+  .textSecondLine {
+    width: 210px;
+  }
+  
+  .thumbContainer {
+    margin-bottom: 50px;
+  }
+    
+  .thumbLast {
+    margin-bottom: 0;    
+  }
+    
+  .toggle-closed{
+    margin-right: 30px;
   }
     
   #slides2 {
-   
+    margin-top: 100px;
+    margin-bottom: 150px; 
+  }
+    
+  #info-container {
+    width: 290px;
+    padding: 10px;
   }
 
   .nopadding {
