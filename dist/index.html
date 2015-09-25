@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tuk Tuk</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+      <section id="bgIntro">
+          <div class="row centered">
+            <h1 class="textFirstLine druk">FROM SMALL COSY PLACES</h1>
+            <h1 class="textSecondLine druk">TO WIDE OPEN SPACES</h1>
+          </div>
+      </section>
+       <nav role="navigation" class="top-navigation">
+         <div class="row">
+            <ul class="left">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#booking">Book</a></li>
+              <li><a href="#tuk-ad">Advertise</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="animation right">
+                <div class="tuk-gif"></div>
+            </div>
+            <div class="logo-wrapper">
+              <a href="#about"><div class="logo"></div></a>
+            </div>
+         </div>
+       </nav>
+      
+      
+      <nav class="menu-opener hide-for-large-up">
+          <div class="logo-responsive">
+            <a href="#about"><img src="images/logo.svg" width="100px" height="16px" /></a>
+          </div>
+          <div class="animation right">
+            <div class="tuk-gif"></div>
+          </div>
+        <div class="menu-opener-inner"></div>
+      </nav>
+      <div class="menu hide-for-large-up">
+        <ul class="menu-inner">
+          <a href="#about" class="menu-link">
+            <li>About</li>
+          </a>
+          <a href="#experience" class="menu-link">
+            <li>Experience</li>
+          </a>
+          <a href="#booking" class="menu-link">
+            <li>Book</li>
+          </a>
+          <a href="#tuk-ad" class="menu-link">
+            <li>Advertise</li>
+          </a>
+          <a href="#faq" class="menu-link">
+            <li>FAQ</li>
+          </a>
+        </ul>
+      </div>
+      <section id="about">      
+          <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+              <div id="slides2" class="clearfix">
+                <img src="images/experience.jpg" alt="image 1"/>
+                <img src="http://placehold.it/1000x595" alt="image 2"/>
+                <img src="http://placehold.it/1000x595" alt="image 3"/>
+                <a href="#" class="slidesjs-previous slidesjs-navigation"></a>
+                <a href="#" class="slidesjs-next slidesjs-navigation"></a>
+              </div>
+            </div> 
+          </div><!-- ./row -->
+          <div class="row">
+              <div class="small-12 large-12 columns text-center textContainer">
+                    <h1 class="druk">WE PROVIDE BESPOKE EXPERIENCES OF DULBIN CITY THAT ARE PERSONAL, FUN AND TRULY UNIQUE</h1>
+                    <div class="border">
+                        <button>BOOK HERE</button>
+                </div>
+              </div>
+          </div>
+      </section>      
+      <!--div class="panel callout radius">   
+      <h1>Gulp with Includes</h1>
+    
+
+            <p>You now have</p>
+      <ul>
+        <li>HTML Boilerplate</li>
+        <li>Sass</li>
+      </ul>
+      </div-->
+
+      </div><!-- ./container -->
+
+      <section id="experience">
+        <div class="row text-center">
+          <div class="contentIcon">
+            <object type="image/svg+xml" data="images/experience-icon.svg" width="58" height="52"></object>
+          </div>
+          <h1 class="druk">TUK EXPERIENCE</h1>
+        </div><!-- ./row --> 
+
+        <div class="row">
+          <div class="small-12 medium-6 large-5 columns desc">
+            <p>A bespoke way to experience Dublin city<br/><br/>
+Winding through the small back streets from the old medieval city to the heart of modern, vibrant Dublin! You get to see the famous city landmarks but also experience real Dublin — the best restaurants, pubs, bars and shopping districts. It’s not only the most fun way to see Dublin but the easiest! We pick you up and drop you off in the city centre.</p>
+          </div>
+          <div class="small-12 medium-6 large-6 columns photo">
+            <img src="images/experience.jpg" width="545" height="365" />
+          </div>
+        </div><!-- ./row -->
+
+      
+        <div class="row">
+          <div class="small-12 medium-12 large-12 columns">
+            <div id="map_canvas"></div>
+            <div id="info-container"></div>
+          </div>
+        </div>        
+        <div class="row">  
+          <div class="small-12 medium-4 large-4 columns">
+            
+            <div class="thumb" style="background-image: url(../images/thumb1.jpg);" width="320" height="150"></div>
+            <div class="thumbContainer">
+              <h5>Private Groups</h5>
+              <p>If you’re planning a birthday or any other celebration for you and a groups of friends we’ll give you an unforgettable Tuk Tuk Experience. </p>
+            </div>
+          </div>
+
+          <div class="small-12 medium-4 large-4 columns">
+          
+          <div class="thumb" style="background-image: url(../images/thumb2.jpg);" width="320" height="150"></div>
+            <div class="thumbContainer">
+            <h5>Corporate Groups</h5>
+            <p>If you’re planning a birthday or any other celebration for you and a groups of friends we’ll give you an unforgettable Tuk Tuk Experience. </p>
+            </div>
+          </div>
+          
+          <div class="small-12 medium-4 large-4 columns">
+            <div class="thumb" style="background-image: url(../images/thumb3.jpg);" width="320" height="150"></div>
+            <div class="thumbContainer thumbLast">
+              <h5>Incentives</h5>
+              <p>If you’re planning a birthday or any other celebration for you and a groups of friends we’ll give you an unforgettable Tuk Tuk Experience. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">   
+          <div class="border text-center">
+            <button class="green">CONTACT US</button>
+          </div>
+        </div>
+      
+    </section>
+    <section id="booking">
+      <div class="container text-center">
+        <div class="row">
+          <div class="contentIcon">
+            <object type="image/svg+xml" data="images/booking.svg" width="67" height="52"></object>
+          </div>
+          <h1 class="druk">BOOKING & PRICES</h1>
+        </div>
+      </div><!-- ./container --> 
+
+        <div class="row">
+          <div class="small-12 medium-5 large-4 columns desc">
+            <p>The price of a 1 — hour tuk tour depends on the amount of people in each tuk. Each tuk tuk takes a maximum of six people.</p>
+            <div class="border">
+                <button>BOOK HERE</button>
+            </div>
+          </div>
+          <div class="small-12 medium-7 large-7 columns table-price nopadding">
+            <table id="book">
+                <thead>
+                    <tr>
+                        <th><span>NUMBER OF PEOPLE</span></th>
+                        <th><span>PRICE PER PERSON</span></th>
+                        <th><span>TOTAL </span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6</td>
+                        <td>€16.70</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>€20</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>€25</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>€30</td>
+                        <td>€80</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>€40</td>
+                        <td>€80</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>€80</td>
+                        <td>€80</td>
+                    </tr>
+                </tbody>
+        </table>
+              <p>Book <a class="lr" href="#">here</a> or please contact us on <a class="lr" href="mailto:sales@tuktukdublin.ie">sales@tuktukdublin.ie</a> for more information</p>
+          </div>
+      </div><!-- ./row -->
+    </section>
+    
+    <section id="tuk-ad">
+      <div class="container text-center">
+        <div class="row">
+          <div class="contentIcon">
+            <object type="image/svg+xml" data="images/camera.svg" width="67" height="52"></object>
+          </div>
+          <h1 class="druk">ADVERTISE</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="small-12 medium-5 large-5 columns desc">
+            <p>If you want your brand or campaign to really stand out, choose a Tuk Tuk. It’s mobile advertising at its best — unique, eye-catching and very very mobile! As 100% electric vehicles this is also environmentally friendly advertising. Be different, get noticed, Tuk Tuk Advertising.</p>
+            <div class="border">
+              <button>CONTACT US</button>
+            </div>
+          </div>
+          <div class="small-12 medium-7 large-6 columns photo">
+            <div id="slides">
+                <img src="images/experience.jpg" />
+                <img src="http://placehold.it/490x300" />
+                <img src="http://placehold.it/490x300" />
+                <a href="#" class="slidesjs-previous slidesjs-navigation" onclick="event.stopPropagation();"><img class="prev-button" src="images/prev.svg" width="35" height="35"></a>
+                <a href="#" class="slidesjs-next slidesjs-navigation" onclick="event.stopPropagation();"><img class="next-button" src="images/next.svg" width="35" height="35"></a>
+          </div>
+            </div>
+        </div>
+      </div><!-- ./container --> 
+      <div class="row"></div>
+    </section>
+  
+    <section id="faq">
+      <div class="container">
+        <div class="row">
+          <div class="small-12 large-5 columns desc">
+            <h1 class="druk">FAQ'S</h1>
+          </div>
+          <div class="small-12 large-7 columns faq">
+            <ul class="accordion" data-accordion>
+              <li class="accordion-navigation">
+                <a class="close" href="#q1">How many people can go in a tuk tuk?<span class="toggle-closed"></a>
+                <div id="q1" class="content">
+                  A maximium of four people can go in each tuk tuk.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q2">Are the tuk tuks covered from the weather?<span class="toggle-closed"></a>
+                <div id="q2" class="content">
+                  Yes the tuk tuks have full rain covers which can be pulled back when the weather is good and closed when the wather is bad?
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q3">Is it cold in a tuk tuk?<span class="toggle-closed"></a>
+                <div id="q3" class="content">
+                  With heated and seats and full canvas cover our tuk tuks are pretty cosy even in bad weather but they are not the same as a car so we sdvise that you wear your coat if it’s cold.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q4">How long is the tour?<span class="toggle-closed"></a>
+                <div id="q4" class="content">
+                  The regular tour lasts one hour. 
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q5">Can I eat, drink or smoke on while on a Tuk Tuk tour?<span class="toggle-closed"></a>
+                <div id="q5" class="content">
+                  We do not allow eating and drinking on the tuk tuks during a tour for halth and safety reasons.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q6">Can I get dropped off at a certain location in the city?<span class="toggle-closed"></a>
+                <div id="q6" class="content">
+                  On a regular tour we begin and finish at the same city centre location (unless in the case of private/ group bookings) so we cannot drop you at alternative locations in the city.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q7">Is there group discount offered?<span class="toggle-closed"></a>
+                <div id="q7" class="content">
+                  We can arrang groups discounts. Just contact us at <a class="acc-link" href="mailto:info@tuktoursdublin.com">info@tuktoursdublin.com</a> or phone us
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a class="close" href="#q8">Do I have to book?<span class="toggle-closed"></a>
+                <div id="q8" class="content">
+                  Booking is not essential but recommended as we cannot guarantee you availability if you just walk up on the day.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- ./container --> 
+    </section>
+    
+    <section id="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="small-12 medium-5 large-5 columns desc">
+            <p><strong>Keep up to date with Tuk Tuk</strong></p>
+          </div>
+          <div class="small-12 medium-7 large-7 columns email">
+            <input type="text" placeholder="ENTER EMAIL ADDRESS"><input type="submit" value="JOIN">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="row">
+        <div class="small-12 medium-5 large-5 columns desc">
+          <p>&copy; Tuk Tuk Tours</p>
+        </div>
+        <div class="small-12 medium-4 large-4 columns details">
+          <p>Tuk Tuk Address</p>
+          <p>No 90 The Road Avenue,</p>
+          <p>Rathmines, Dublin 6</p>
+        </div>
+        <div class="small-12 medium-3 large-3 columns details">
+          <p>Ph: +123 5678</p>
+          <p>Send us an <a class="lr" href="#">email</a></p>
+          <a class="lr" href="#">Facebook</a><br/>
+          <a class="lr" href="#">Twitter</a>
+        </div>
+      </div>
+      <div class="row">
+        <a href="#top" class="go-top" title="Go to the top of the page"><img class="top-button" src="images/top.svg" width="35" height="35"></a> 
+      </div>
+    </section>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+        <script src="scripts/main.js"></script>
+</body>
+</html>
