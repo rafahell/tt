@@ -2,23 +2,31 @@
 
 var l = function(message) {
     console.log(message);
-}
+};
 
 //console.log('\'Allo \'Allo!');
 
        var locations = [
     [
-        "<div class='button-close'></div><div class='image'><img src='http://placehold.it/320x200'/></div><br/><p>Dublin Castle</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p><a href='http://www.deanhoteldublin.ie'>www.deanhoteldublin.ie</a><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
-    53.343021 , -6.267411,
+        "<div class='button-close'></div><div class='image'><img src='images/dublin-castle.jpg'/></div><br/><p>Dublin Castle</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
+    53.343785, -6.267577,
     1],
     [
-        "<div class='button-close'></div><div class='image'><img src='http://placehold.it/320x200'/></div><br/><p>Trinity College</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p><a href='http://www.deanhoteldublin.ie'>www.deanhoteldublin.ie</a><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
-    53.343805, -6.254550,
+        "<div class='button-close'></div><div class='image'><img src='images/ship-street.jpg'/></div><br/><p>Ship Street</p><p>Ship Street has one of the last remaining sections of Dublin’s old city walls. It’s also located beside the area where Dublin got its name – 'Dubh Linn'.</p><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
+    53.342718, -6.267179,
     2],
     [
-        "<div class='button-close'></div><div class='image'><img src='http://placehold.it/320x200'/></div><br/><p>St Patricks Church</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p><a href='http://www.deanhoteldublin.ie'>www.deanhoteldublin.ie</a><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
-    53.340241, -6.271209 ,
+        "<div class='button-close'></div><div class='image'><img src='images/smock-alley.jpg'/></div><br/><p>Temple Bar/ Smock Alley </p><p>Temple Bar has a long and varied history. Today it is Dublin’s ‘Cultural Quarter’ and is home to many galleries, studios, theatres, performance venues, exhibition spaces and cinema screens including the oldest theatre in Dublin – Smock Alley built in 1662. And there’s also a few pubs too!</p> <div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
+    53.344780, -6.268911,
     3],
+    [
+        "<div class='button-close'></div><div class='image'><img src='images/georges-arcade.jpg'/></div><br/><p>The Creative Quarter/ Georges Street Arcade </p><p>The ‘Creative Quarter’ is named for the eclectic mix of small independent boutiques, vintage shops, galleries and artisanal food producers located here, giving the area a distinctly unique feel in Dublin city. The area also has a great nightlife with tonnes of restaurants, cafés and bars catering for every taste.</p><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
+    53.342470, -6.263224,
+    4],
+    [
+        "<div class='button-close'></div><div class='image'><img src='images/south-anne-st.jpg'/></div><br/><p>South Anne Street/ Shopping District</p><p>This area looks onto Grafton Street, the main shopping street in Dublin, where the big international brands and shops are usually located. There’s also some interesting little pubs to see on the side streets, like Keogh’s – a classic in Dublin city centre!</p><div class='buttons-container'><img class='prev-button' src='images/prev.svg' width='35' height='35'><img class='next-button' src='images/next.svg' width='35' height='35'></div>",
+    53.341089, -6.259342,
+    5],
     
 ];
 var markers = [];
@@ -27,10 +35,10 @@ var map;
 function initialize() {
         
     map = new google.maps.Map(document.getElementById('map_canvas'), {
-        minZoom: 10, 
+        minZoom: 14, 
 	    maxZoom: 20, 
-        zoom: 14,
-        center: new google.maps.LatLng(53.347584, -6.259391),
+        zoom: 15,
+        center: new google.maps.LatLng(53.344227, -6.264530),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         zoomControl: true,
         scrollwheel: false,
@@ -146,12 +154,14 @@ function initialize() {
 
                 //pan map to exact location of the pin      
                 var newH = marker.getPosition().H - 0.0000;
-                var newL = marker.getPosition().L - -0.0200;         
+                var newL = marker.getPosition().L - -0.0100;         
                 map.panTo( new google.maps.LatLng( newH, newL ) );
 
                 $('.button-close').on("click",function(){
                   $("#info-container").fadeOut();
+                    marker.setIcon("images/pin.svg");
                 });
+            
 
                 $("#info-container").fadeIn("normal");
 
@@ -161,11 +171,7 @@ function initialize() {
         markers.push(marker);
     }
     
-    $(document).on("click", ".prev-button", function(){
-            l('work');
-        
-              
-    });
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -178,7 +184,6 @@ $(document).foundation({
         toggleable: true
       }
 });
-
 
 //Intro Text
 $(".centered").fadeIn('slow').delay(3450);
@@ -215,7 +220,7 @@ $( document ).ready(function() {
 });
 
     //responsive nav menu
-	$(".menu-opener").click(function(){
+	$(".menu-opener-inner").click(function(){
         $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
 	});
     $('.menu-inner a li').click(function() {
@@ -252,27 +257,36 @@ $( document ).ready(function() {
 	});
 
     
-    $(window).on('scroll', function(e) {
-        if($(window).width() > 1024) {
+    $(document).on('scroll', function(e) {
+        if($(window).width() > 767) {
         console.log('scrolling');
        
            var navHeight = $(window).height() - 0;
-           var height = $('#bgIntro').height();    
+           var intro = $('#bgIntro').height();    
 			 if ($(window).scrollTop() > navHeight) {
 				 //$('nav').addClass('fixed');
                  //$('#bgIntro').remove();
                  $('#bgIntro').remove();
-                 $(document).scrollTop($(window).scrollTop() - height);   
+                 $(document).scrollTop($(window).scrollTop() - intro);  
+                 //$('html, body').animate({scrollTop:$(document).height()}, 1000);
+                 //console.log('intro is gone');
+                 $(document).unbind('scroll');
+                 
 			 }
 			 else {
 				 $('nav').removeClass('fixed');
+                 //console.log('else - remove fixed');
+               
 			 }
-             if ($('#bgIntro').length == 0){
-                 $('nav').addClass('fixed');
+             if ($('#bgIntro').length === 0){
+                 $('nav').css('position','fixed');
                  $('nav').css('margin-top', '0');
+                 //console.log('else - remove fixed');
+                  
              }
         }
-        event.preventDefault();
+        
+        e.preventDefault(); 
     });
     
     // console log wrapper so you only have to type l() not console.log()
@@ -286,7 +300,7 @@ $( document ).ready(function() {
         // for each section hightlight the relevant item in the navbar
         $('section').each(function(){
         // set the top position
-        topPos = $(this).offset().top
+        topPos = $(this).offset().top;
         // set the bottom position
         bottomPos = $(this).offset().top + $(this).height();
         // check if the current scroll between the elements top and bottom position
