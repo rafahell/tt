@@ -7,11 +7,11 @@ $yellow: #FCE700;
 
 @font-face {
   font-family: 'Druk Web';
-  src: url('/font/Druk-Super-Web.eot');
-  src: url('/font/Druk-Super-Web.eot?#iefix') format('embedded-opentype'),
-  url('/font/Druk-Super-Web.woff') format('woff'),
-  url('/font/Druk-Super-Web.ttf') format('truetype'),
-  url('/font/Druk-Super-Web.svg#Druk Web') format('svg');
+  src: url('../font/Druk-Super-Web.eot');
+  src: url('../font/Druk-Super-Web.eot?#iefix') format('embedded-opentype'),
+  url('../font/Druk-Super-Web.woff') format('woff'),
+  url('../font/Druk-Super-Web.ttf') format('truetype'),
+  url('../font/Druk-Super-Web.svg#Druk Web') format('svg');
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -493,6 +493,9 @@ nav {
   position: relative;
   max-width: 100%;
   display: block;
+  width: 60px;
+  height: 60px;
+  margin: auto;
 }
 
 .nopadding {
@@ -543,7 +546,7 @@ nav {
     }
     .buttons-container{
       width: 100%;
-      margin-top: 35px;
+      margin-top: 10px;
       position: relative;
       display: block;
     }
